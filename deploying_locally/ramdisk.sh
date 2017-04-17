@@ -26,7 +26,8 @@ then
   RAMDISK_SECTORS=$((2048 * $RAMDISK_SIZE_MB))
   DISK_ID=$(hdiutil attach -nomount ram://$RAMDISK_SECTORS)
   echo "Disk ID is :" $DISK_ID
-  diskutil erasevolume HFS+ "ramdisk" ${DISK_ID}
+  # Case sensitive filesystem:
+  diskutil erasevolume hfsx "ramdisk" ${DISK_ID}
 fi
 
 if [ "$1" = "delete" ]
