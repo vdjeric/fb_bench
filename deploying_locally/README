@@ -5,7 +5,7 @@ The benchmark is not official or necessarily representative, it’s just a stati
 How to replicate my web server setup if you don't want to use your own:
 - Create a 200MB ramdisk using the attached ramdisk.sh script: ./ramdisk.sh create 200
   - Note that you want to use this script or a similar command because you need to create a case-sensitive filesystem
-  - Extract the static resources from the ZIP file into /Volumes/ramdisk/
+  - Clone the repo contents into /Volumes/ramdisk/
 - Set up nginx:
   - Install nginx, and use the attached nginx.conf file
   - Copy the self-signed .crt and .key certificate files into the same directory as the nginx.conf file (or create your own certs)
