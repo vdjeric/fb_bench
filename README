@@ -1,5 +1,10 @@
-A static Facebook newsfeed benchmark: https://vdjeric.github.io/fb_bench/newsfeed_bench.htm
-A static Facebook comments component sub-test: https://vdjeric.github.io/fb_bench/comments_bench.htm
+A static Facebook newsfeed benchmark:
+
+https://vdjeric.github.io/fb_bench/newsfeed_bench.htm
+
+A static Facebook comments component sub-test:
+
+https://vdjeric.github.io/fb_bench/comments_bench.htm
 
 Loading milestone times are logged to DevTools console with console.log()
 
