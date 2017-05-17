@@ -2,19 +2,29 @@ The benchmark is just static resources (JS/CSS/images), so you can host it on an
 The included HTML pages log timings for the loading milestones that Facebook cares about (time-to-interactive, display done, end-to-end) using console.log().
 The benchmark is not official or necessarily representative, it’s just a static snapshot of a test user's newsfeed instrumented with timings.
 
-How to replicate my web server setup if you don't want to use your own:
-- Create a 200MB ramdisk using the attached ramdisk.sh script: ./ramdisk.sh create 200
+TO SETUP THE BENCHMARK:
+============================
+OPTION 1: Use Wiktor Garbacz's Chrome benchmarking script
+
+1. From an OSX terminal: ./run_bench.sh <path to Chrome>
+  - e.g. ./run_bench.sh "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+OPTION 2: How to replicate my web server setup from scratch
+
+1. Create a 200MB ramdisk using the attached ramdisk.sh script: ./ramdisk.sh create 200
   - Note that you want to use this script or a similar command because you need to create a case-sensitive filesystem
   - Extract the static resources from the ZIP file into /Volumes/ramdisk/ You don't want to just clone the repo because the inline paths are different and reference github.io
-- Set up nginx:
+2. Set up nginx:
   - Install nginx, and use the attached nginx.conf file
   - Copy the self-signed .crt and .key certificate files into the same directory as the nginx.conf file (or create your own certs)
+3. Set up OS environment:
   - Register the self-signed certs with the OS: sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain fb-benchmark.crt
   - Edit /etc/hosts to have "fb-benchmark" resolve to your server’s IP, then “sudo killall -HUP mDNSResponder” to pick up the host file changes
 
-This is all optional. The ramdisk is to reduce noise, and I found that serving the files over https actually influences whether Chrome caches bytecode or not. Faking a facebook.com domain is extremely hard, so I wouldn’t recommend trying that, hence my choice of “fb-benchmark:8443”.
+These are all optional. The ramdisk is to reduce noise, and I found that serving the files over https actually influences whether Chrome caches bytecode or not. Faking a facebook.com domain is extremely hard, so I wouldn’t recommend trying that, hence my choice of “fb-benchmark:8443”.
 
-To run the benchmarks:
+TO RUN THE BENCHMARKS:
+============================
 - Simply load https://fb-benchmark:8443/newsfeed_bench.htm to collect facebook newsfeed load time metrics in the DevTools console
 - There is also a smaller sub-test at https://fb-benchmark:8443/comments_bench.htm that measures the rendering time of the Facebook comments component (mostly React execution time). The render time is logged in the DevTools console
 
