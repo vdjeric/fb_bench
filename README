@@ -1,5 +1,8 @@
-The benchmark is just static resources (JS/CSS/images), so you can host it on any web server with a minimum of configuration.
-The included HTML pages log timings for the loading milestones that Facebook cares about (time-to-interactive, display done, end-to-end) using console.log().
-The benchmark is not official or necessarily representative, it’s just a static snapshot of a test user's newsfeed instrumented with timings.
+A static Facebook newsfeed benchmark: https://vdjeric.github.io/fb_bench/newsfeed_bench.htm
+A static Facebook comments component sub-test: https://vdjeric.github.io/fb_bench/comments_bench.htm
+
+Loading milestone times are logged to DevTools console with console.log()
+
+This benchmark is not official or necessarily representative, it’s just a static snapshot of a test user's newsfeed instrumented with timings.
 
 See the README in the deploying_locally/ directory for how to run this benchmark in your local environment.
