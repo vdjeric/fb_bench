@@ -4,12 +4,7 @@ The included HTML pages log timings for the loading milestones that Facebook car
 TO SETUP THE BENCHMARK:
 ============================
 
-OPTION 1: Use Wiktor Garbacz's Chrome benchmarking script
-
-1. From a Unix terminal: ./run_bench.sh <path to Chrome>
-  - e.g. ./run_bench.sh "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-
-OPTION 2: How to replicate my web server setup from scratch
+How to replicate my web server setup from scratch
 
 1. Create a 200MB ramdisk using the attached ramdisk.sh script: ./ramdisk.sh create 200
   - Note that you want to use this script or a similar command because you need to create a case-sensitive filesystem
