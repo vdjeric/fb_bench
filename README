@@ -6,7 +6,7 @@ A static Facebook comments component sub-test:
 
 https://vdjeric.github.io/fb_bench/comments_bench.htm
 
-Loading milestone times are logged to DevTools console with console.log()
+Loading milestones and their times are logged to DevTools console with console.log()
 
 This benchmark is not official or necessarily representative, it’s just a static snapshot of a test user's newsfeed instrumented with timings.
 
